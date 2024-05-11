@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRoutes from "./routes/user.routes.js";
+import authRoute from "./routes/auth.routes.js";
 
 dotenv.config();
 
@@ -15,7 +16,7 @@ mongoose
   .catch((err) => console.log(err));
 
 const app = express();
-
+app.use(express.json()); // this will allow input to be json
 app.get("/", (req, res) => {
   res.send("All Good");
 });
@@ -25,3 +26,4 @@ app.listen(3000, () => {
 });
 
 app.use("/api/user", userRoutes);
+app.use("/api/auth", authRoute);
