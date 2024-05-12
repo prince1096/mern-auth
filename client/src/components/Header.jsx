@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
-// import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 
 export default function Header() {
-  //   const { currentUser } = useSelector((state) => state.user);
+  const { currentUser } = useSelector((state) => state.user);
 
-  const currentUser = "";
+  // console.log(currentUser);
+
+  // const currentUser = "";
   return (
     <div className="bg-slate-200">
       <div className="flex justify-between items-center max-w-6xl mx-auto p-3">
